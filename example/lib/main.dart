@@ -3,8 +3,9 @@ import 'package:xc_db_maker_example/app_db.dart';
 import 'package:xc_db_maker_example/entities/client.dart';
 import 'package:xc_db_maker_example/models/pdo_manager.dart';
 
-void main() {
-  appDb.xcDBInit(); // Initialize and create in memory db
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await appDb.xcDBInit(); // Initialize and create in memory db
   runApp(MyApp());
 }
 
@@ -13,11 +14,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'xc b maker',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'XC DB Marker'),
+      home: MyHomePage(title: 'XC DB Maker'),
     );
   }
 }
@@ -79,6 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   debugPrint("Client added");
                 },
                 child: Text("Add Client"),
+                color: Colors.blue,
               )
             ),
             Padding(
@@ -89,7 +91,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     debugPrint("Clients deleted");
                   },
                   child: Text("Delete all Client"),
-                )
+                  color: Colors.blue,
+                ),
+
             )
           ],
         ),

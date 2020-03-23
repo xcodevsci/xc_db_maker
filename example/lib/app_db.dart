@@ -10,14 +10,14 @@ List<Tables> listTables = <Tables>[
           fullname TEXT NULL,
           city TEXT NULL,
           country TEXT NULL,
-          addr TEXT NNULL
+          address TEXT NULL
           '''
   ),
   Tables(
       name: "user",
       columns: '''
           login TEXT NULL,
-          pwd TEXT NULL,
+          pwd TEXT NULL
           '''
   ),
   //....
