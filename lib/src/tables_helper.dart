@@ -1,3 +1,4 @@
+/// Database tables structures
 class Tables{
   final name;
   final columns;

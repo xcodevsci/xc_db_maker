@@ -3,6 +3,7 @@ import 'package:sqflite/sqflite.dart';
 import 'pdo_factory.dart';
 import 'tables_helper.dart';
 
+/// Inialize DB options
 class DatabaseHelper{
   // make this a singleton class
 

@@ -1,17 +1,17 @@
 import 'tables_helper.dart';
-import 'xc_global_db_provider.dart';
+import 'global_db_provider.dart';
 
 class Make{
 
-  static get db => xcGlobalDbProvider.db;
+  static get db => globalDbProvider.db;
 
   // Creation des tables xcCreateTable
   static xcCreationTables({String dbname,List<Tables> listTables}) async {
-    xcGlobalDbProvider.createTables(dbname, listTables);
+    globalDbProvider.createTables(dbname, listTables);
   }
 
   static xcDbClose(){
-    xcGlobalDbProvider.closedb();
+    globalDbProvider.closedb();
   }
 
   //Ajouter des donner

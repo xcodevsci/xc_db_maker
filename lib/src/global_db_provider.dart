@@ -9,13 +9,15 @@ import 'tables_helper.dart';
 /// BASE DE DONNEE PROVIDER
 final dbHelper = DatabaseHelper.instance;
 
-class XCGlobalDbProvider{
+/// Bridge
+class GlobalDbProvider{
 
   Database _db;
   VoidCallback _onDbCloseCallback;
 
   get db =>_db;
 
+  /// Create and open DB
   createTables(String dbname,List<Tables> listTables) async{
     _db = await dbHelper.createTables(dbname,listTables);
 
@@ -23,6 +25,7 @@ class XCGlobalDbProvider{
       print("DATABASE IS OPEN SIMPLY");
   }
 
+  /// Close the db
   Future closedb() async{
     if(_db != null)
       await _db.close();
@@ -39,11 +42,11 @@ class XCGlobalDbProvider{
   ///
   /// Singleton Factory
   ///
-  static final XCGlobalDbProvider _xcGlobalDbProvider = new XCGlobalDbProvider._internal();
-  factory XCGlobalDbProvider() {
-    return _xcGlobalDbProvider;
+  static final GlobalDbProvider _globalDbProvider = new GlobalDbProvider._internal();
+  factory GlobalDbProvider() {
+    return _globalDbProvider;
   }
-  XCGlobalDbProvider._internal();
+  GlobalDbProvider._internal();
 }
 
-XCGlobalDbProvider xcGlobalDbProvider = new XCGlobalDbProvider();
+GlobalDbProvider globalDbProvider = new GlobalDbProvider();
