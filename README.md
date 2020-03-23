@@ -1,6 +1,5 @@
-# xc db maker
 
-This package is use to create easily an instance of sqlite db and ready to use.
+This package is use to create easily an instance of sqlite db and ready to use. Quick and easy to integrate
 
 ## Get an xc Database instance
 
@@ -79,7 +78,7 @@ This package is use to create easily an instance of sqlite db and ready to use.
 ```
 ## Futures
 
-12 basiques functions in French and English version
+09 basiques functions in French and English version
 
 - xcAdd () or xcAjoute() : adding an entity
 - xcReadFirst() or xcLitPremier() : Read first row in table
