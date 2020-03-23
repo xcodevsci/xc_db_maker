@@ -1,7 +1,8 @@
 library xc_db_maker;
 
-import 'tables_helper.dart';
-import 'xc_global_db_provider.dart';
+import 'tools/tables_helper.dart';
+
+import 'tools/xc_global_db_provider.dart';
 
 class Make{
 
