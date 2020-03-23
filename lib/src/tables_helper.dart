@@ -1,10 +1,7 @@
 /// Database tables structures
-class Tables{
+class Tables {
   final name;
   final columns;
 
-  Tables({
-    this.name,
-    this.columns
-  } );
+  Tables({this.name, this.columns});
 }

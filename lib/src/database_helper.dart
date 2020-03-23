@@ -4,7 +4,7 @@ import 'pdo_factory.dart';
 import 'tables_helper.dart';
 
 /// Inialize DB options
-class DatabaseHelper{
+class DatabaseHelper {
   // make this a singleton class
 
   DatabaseHelper._privateConstructor();
@@ -13,9 +13,7 @@ class DatabaseHelper{
 
   //static final createTables = PdoFactory(tables: listTables);
 
-
-  Future<Database> createTables(String dbname,List<Tables> tables) async {
-    return await PdoFactory(dbname: dbname,tables: tables).database;
+  Future<Database> createTables(String dbname, List<Tables> tables) async {
+    return await PdoFactory(dbname: dbname, tables: tables).database;
   }
-
 }

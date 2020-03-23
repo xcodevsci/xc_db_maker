@@ -10,39 +10,37 @@ import 'tables_helper.dart';
 final dbHelper = DatabaseHelper.instance;
 
 /// Bridge
-class GlobalDbProvider{
-
+class GlobalDbProvider {
   Database _db;
   VoidCallback _onDbCloseCallback;
 
-  get db =>_db;
+  get db => _db;
 
   /// Create and open DB
-  createTables(String dbname,List<Tables> listTables) async{
-    _db = await dbHelper.createTables(dbname,listTables);
+  createTables(String dbname, List<Tables> listTables) async {
+    _db = await dbHelper.createTables(dbname, listTables);
 
-    if(_db.isOpen)
-      print("DATABASE IS OPEN SIMPLY");
+    if (_db.isOpen) print("DATABASE IS OPEN SIMPLY");
   }
 
   /// Close the db
-  Future closedb() async{
-    if(_db != null)
-      await _db.close();
+  Future closedb() async {
+    if (_db != null) await _db.close();
 
-    if (_onDbCloseCallback != null){
+    if (_onDbCloseCallback != null) {
       _onDbCloseCallback();
     }
   }
 
-  set onDbCloseCallback(VoidCallback callback){
+  set onDbCloseCallback(VoidCallback callback) {
     _onDbCloseCallback = callback;
   }
 
   ///
   /// Singleton Factory
   ///
-  static final GlobalDbProvider _globalDbProvider = new GlobalDbProvider._internal();
+  static final GlobalDbProvider _globalDbProvider =
+      new GlobalDbProvider._internal();
   factory GlobalDbProvider() {
     return _globalDbProvider;
   }
