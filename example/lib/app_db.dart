@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:xc_db_maker/db_maker.dart';
+import 'package:xc_db_maker/xc_db_maker.dart';
 
 List<Tables> listTables = <Tables>[
   Tables(
