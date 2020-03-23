@@ -1,14 +1,23 @@
-# xcdbcreator
+# xc db maker
 
-Smart creating sqlite db 
+This package is use to create easily an instance of sqlite db and ready to use.
 
-## Getting Started
+## Get an Sqlite Database instance
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+'''
+    await Make.xcCreationTables(dbname: "dbname", listTables:listTables );
+    Database _db = Make.db
+'''
+## Futures
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+12 basiques functions in French and English version
+
+- xcAdd () or xcAjoute() : adding an entity
+- xcReadFirst() or xcLitPremier() : Read first row in table
+- xcReadLast() or xcLitDerneir() : Read last row in table
+- xcModify() or xcModifie() : Modify current entity
+- xcDelete() or xcSupprime() : Delete current entity
+- xcDeleteAll() or xcSupprimeTout() : Delete all entity
+- xcFind() or xcTrouve() : Seach in entity
+- xcReadNext() or xcLitSuivant() : Read next row
+- xcReadPrevious() or xcPrecedent() : Read previous row
