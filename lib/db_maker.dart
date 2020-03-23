@@ -1,24 +1,4 @@
 library xc_db_maker;
+export 'src/tables_helper.dart';
+export 'src/make.dart';
 
-import 'tools/tables_helper.dart';
-
-import 'tools/xc_global_db_provider.dart';
-
-class Make{
-
-  static get db => xcGlobalDbProvider.db;
-
-    // Creation des tables xcCreateTable
-   static xcCreationTables({String dbname,List<Tables> listTables}) async {
-     xcGlobalDbProvider.createTables(dbname, listTables);
-   }
-
-   static xcDbClose(){
-     xcGlobalDbProvider.closedb();
-   }
-
-   //Ajouter des donner
-    static xcAjoute(){
-
-    }
-}
