@@ -1,8 +1,8 @@
 name: xc_db_maker
 description: Flutter Sqlite db bridge
 version: 0.0.1
-author:
-homepage:
+author: xcodevs - TINA Arouna <inbox@xcodevs.com>
+homepage: https://github.com/xcodevsci/xc_db_maker.git
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
