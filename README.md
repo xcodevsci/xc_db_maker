@@ -2,12 +2,81 @@
 
 This package is use to create easily an instance of sqlite db and ready to use.
 
-## Get an Sqlite Database instance
+## Get an xc Database instance
 
-'''
+```
     await Make.xcCreationTables(dbname: "dbname", listTables:listTables );
     Database _db = Make.db
-'''
+```
+## Exambles
+```
+    List<Tables> listTables = <Tables>[
+      Tables(
+          name: "client",
+    
+          columns: '''
+              fullname TEXT NULL,
+              city TEXT NULL,
+              country TEXT NULL,
+              address TEXT NULL
+              '''
+      ),
+      Tables(
+          name: "user",
+          columns: '''
+              login TEXT NULL,
+              pwd TEXT NULL
+              '''
+      ),
+      //....
+    ];
+    await Make.xcCreationTables(dbname: "dbname", listTables:listTables );
+    
+    //Create an entity
+
+    class Client {
+      final fullname;
+      final city;
+      final country;
+      final address;
+    
+      Client({
+        this.fullname,
+        this.city ,
+        this.country,
+        this.address
+      });
+    
+      Map<String, dynamic> toMap() {
+    
+        return {
+          'fullname': fullname,
+          'city': city,
+          'country': country,
+          'address': address,
+        };
+      }
+    
+      factory Client.fromJson(Map<String, dynamic> json) {
+        return Client(
+            fullname: json['fullname'],
+            city: json['city'],
+            country: json['country'],
+            address: json['address']
+        );
+      }
+    }
+
+    //New client
+    Client newClient  = Client(
+        fullname: "TINA K. Arouna",
+        city: "Abidjan",
+        country: "Côte d'ivoire",
+        address: "Cocody angré - xcodevs corporation"
+      );
+    
+    make.db.insert('client',newClient.toMap())
+```
 ## Futures
 
 12 basiques functions in French and English version
